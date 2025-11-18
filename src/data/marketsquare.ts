@@ -2,10 +2,6 @@
 
 export type CategoryId = "food" | "drinks";
 
-// New types near the top of data/marketsquare.ts
-
-export type CategoryId = "food" | "drinks";
-
 export type MenuItem = {
   name: string;           // "Beef & Kimchi" OR "__title__"
   description?: string;
