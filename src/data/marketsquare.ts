@@ -39,6 +39,17 @@ export const CATEGORIES: { id: CategoryId; label: string }[] = [
 
 export const BRANDS: Brand[] = [
   // ---------------- FOOD ----------------
+ {
+    id: "hot-shot",
+    name: "Hot Shot Deli & Coffee Shop",
+    logo: "/brands/hot-shot.svg",
+    category: "food",
+    blurb: "Neighbourhood deli & coffee comfort.",
+    tags: ["Coffee", "Breakfast", "Deli"],
+    items: ["Espresso bar, toasties, bakes and light deli plates."],
+    bgColor: "#cfc1b4",
+    textColor: "#000000",
+  },
 
   {
   id: "mozza",
@@ -101,7 +112,50 @@ export const BRANDS: Brand[] = [
 },
 
 
+
   {
+  id: "noodz",
+  name: "Noodz",
+  logo: "/brands/noodz.svg",
+  category: "food",
+  blurb: "“Slurp responsibly”",
+  tags: ["Noodles", "Stir-fry", "Spicy"],
+  items: [
+    "Paprika stir-fry, Korean pulled beef and balsamic noodz bowls."
+  ],
+  bgColor: "#000000",
+  textColor: "#ffffff",
+
+  menu: [
+    {
+      id: "bowls",
+      label: "Noodz Bowls",
+      columns: ["Price"],
+      items: [
+        {
+          name: "Paprika Stir-Fry",
+          description:
+            "Bok choy, seasonal veg, and a paprika kick. Choose your partner: chicken | beef | tofu. Get tossed.",
+          prices: [""], // fill in e.g. "K 150"
+        },
+        {
+          name: "Korean Pulled Beef",
+          description:
+            "Slow-cooked, saucy, and falls apart at the touch. Go ahead... pull it.",
+          prices: [""], // fill in price
+        },
+        {
+          name: "Balsamic Noodz",
+          description:
+            "Tangy balsamic, seasonal veg, glossy noodles. Choose your partner: chicken | beef | tofu. Make it exciting.",
+          prices: [""], // fill in price
+        },
+      ],
+    },
+  ],
+},
+
+{
   id: "loko",
   name: "Loko",
   logo: "/brands/loko.svg",
@@ -149,49 +203,6 @@ export const BRANDS: Brand[] = [
     },
   ],
 },
-
-  {
-  id: "noodz",
-  name: "Noodz",
-  logo: "/brands/noodz.svg",
-  category: "food",
-  blurb: "“Slurp responsibly”",
-  tags: ["Noodles", "Stir-fry", "Spicy"],
-  items: [
-    "Paprika stir-fry, Korean pulled beef and balsamic noodz bowls."
-  ],
-  bgColor: "#000000",
-  textColor: "#ffffff",
-
-  menu: [
-    {
-      id: "bowls",
-      label: "Noodz Bowls",
-      columns: ["Price"],
-      items: [
-        {
-          name: "Paprika Stir-Fry",
-          description:
-            "Bok choy, seasonal veg, and a paprika kick. Choose your partner: chicken | beef | tofu. Get tossed.",
-          prices: [""], // fill in e.g. "K 150"
-        },
-        {
-          name: "Korean Pulled Beef",
-          description:
-            "Slow-cooked, saucy, and falls apart at the touch. Go ahead... pull it.",
-          prices: [""], // fill in price
-        },
-        {
-          name: "Balsamic Noodz",
-          description:
-            "Tangy balsamic, seasonal veg, glossy noodles. Choose your partner: chicken | beef | tofu. Make it exciting.",
-          prices: [""], // fill in price
-        },
-      ],
-    },
-  ],
-},
-
 
   {
   id: "dumpling-hutt",
@@ -305,21 +316,6 @@ export const BRANDS: Brand[] = [
     },
   ],
 },
-
-
-
- 
-  {
-    id: "hot-shot",
-    name: "Hot Shot Deli & Coffee Shop",
-    logo: "/brands/hot-shot.svg",
-    category: "food",
-    blurb: "Neighbourhood deli & coffee comfort.",
-    tags: ["Coffee", "Breakfast", "Deli"],
-    items: ["Espresso bar, toasties, bakes and light deli plates."],
-    bgColor: "#cfc1b4",
-    textColor: "#000000",
-  },
 
   // ---------------- DRINKS ----------------
 
