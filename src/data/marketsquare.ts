@@ -40,16 +40,92 @@ export const CATEGORIES: { id: CategoryId; label: string }[] = [
 export const BRANDS: Brand[] = [
   // ---------------- FOOD ----------------
  {
-    id: "hot-shot",
-    name: "Hot Shot Deli & Coffee Shop",
-    logo: "/brands/hot-shot.svg",
-    category: "food",
-    blurb: "Neighbourhood deli & coffee comfort.",
-    tags: ["Coffee", "Breakfast", "Deli"],
-    items: ["Espresso bar, toasties, bakes and light deli plates."],
-    bgColor: "#cfc1b4",
-    textColor: "#000000",
-  },
+  id: "hot-shot",
+  name: "Hot Shot Deli & Coffee Shop",
+  logo: "/brands/hot-shot.svg",
+  category: "food",
+  blurb: "Neighbourhood deli & coffee comfort.",
+  tags: ["Coffee", "Breakfast", "Deli"],
+  items: ["Espresso bar, toasties, bakes and light deli plates."],
+  bgColor: "#cfc1b4",
+  textColor: "#000000",
+
+  menu: [
+    {
+      id: "beverages",
+      label: "Beverages",
+      columns: ["Price"],
+      items: [
+        {
+          name: "Frappes",
+          description:
+            "Mango, Strawberry, Apple Mint, Coffee, Coffee & Chocolate Cookie.",
+          prices: ["K 100"],
+        },
+        { name: "Mocaccino", prices: ["K 80"] },
+        { name: "Hot Chocolate", prices: ["K 80"] },
+        { name: "Cappuccino", prices: ["K 80"] },
+        { name: "Cafe Latte", prices: ["K 80"] },
+        { name: "Americano", prices: ["K 75"] },
+        {
+          name: "Tea",
+          description: "Rooibos, Five Roses, Green.",
+          prices: ["K 50"],
+        },
+        { name: "Tea (Ginger)", prices: ["K 65"] },
+        {
+          name: "Non-dairy milk add-on",
+          description: "Oat milk or almond milk.",
+          prices: ["+K 20"],
+        },
+      ],
+    },
+
+    {
+      id: "desserts",
+      label: "Desserts",
+      columns: ["Price"],
+      items: [
+        {
+          name: "Mini Dessert Tarts",
+          description: "Flavour of the day.",
+          prices: ["K 70"],
+        },
+        {
+          name: "Cheesecake Slice",
+          description: "Flavour of the day.",
+          prices: ["K 110"],
+        },
+        {
+          name: "Muffins",
+          description: "Flavour of the day.",
+          prices: ["K 90"],
+        },
+        {
+          name: "Cake Slice",
+          description: "Flavour of the day.",
+          prices: ["K 110"],
+        },
+        {
+          name: "Mini Cake Tins",
+          description: "Flavour of the day.",
+          prices: ["K 90"],
+        },
+        {
+          name: "Other Desserts",
+          description: "See dessert display for today’s selection & pricing.",
+          prices: [""],
+        },
+        {
+          name: "Savoury",
+          description: "Chat to the team about today’s savoury options.",
+          prices: [""],
+        },
+      ],
+    },
+  ],
+},
+
 
   {
   id: "mozza",
@@ -66,63 +142,56 @@ export const BRANDS: Brand[] = [
     {
       id: "pizzas",
       label: "Wood-Fired Pizzas",
-      note: "All pizzas are K180.",
+      note: "K180 unless otherwise stated.",
       columns: ["Price"],
       items: [
         {
-          name: "The Boerie Bella",
+          name: "BBQ Chicken & Mushroom",
           description:
-            "Boerewors, caramelised onion & peppadew with a balsamic glaze.",
-          prices: ["K180"],
+            "Tomato base with pulled chicken, BBQ sauce, green peppers & mushrooms.",
+          prices: ["K 180"],
         },
         {
-          name: "The Pumpkin Don",
+          name: "Spicy Sweet",
           description:
-            "Pumpkin, caramelised onion, feta & sage.",
-          prices: ["K180"],
+            "Tomato base with salami, hot honey & feta crumble.",
+          prices: ["K 180"],
         },
         {
-          name: "The Banano Baconio",
-          description: "Bacon and banana.",
-          prices: ["K180"],
+          name: "Philly Cheesesteak",
+          description:
+            "White base with grilled steak, caramelised onions, green peppers & cheese sauce.",
+          prices: ["K 180"],
         },
         {
-          name: "The Brie-lissimo",
+          name: "Margherita (v)",
+          description: "Tomato base with fresh tomatoes and basil.",
+          prices: ["K 180"],
+        },
+        {
+          name: "Butternut (v)",
+          description:
+            "White base with roasted butternut, onion marmalade, feta & sage.",
+          prices: ["K 180"],
+        },
+        {
+          name: "The Big Fig",
           description: "Brie, fig jam & crispy bacon.",
-          prices: ["K180"],
-        },
-        {
-          name: "Hot Sopran-oh!",
-          description: "Salami & a hot honey drizzle.",
-          prices: ["K180"],
-        },
-        {
-          name: "BBQ Bambino",
-          description: "BBQ chicken & mushroom.",
-          prices: ["K180"],
-        },
-        {
-          name: "Philly Mozzino",
-          description: "Philly cheesesteak.",
-          prices: ["K180"],
+          prices: ["K 210"],
         },
       ],
     },
   ],
 },
 
-
-
-  {
+{
   id: "noodz",
   name: "Noodz",
   logo: "/brands/noodz.svg",
   category: "food",
   blurb: "“Slurp responsibly”",
   tags: ["Noodles", "Stir-fry", "Spicy"],
-  items: [
-    "Paprika stir-fry, Korean pulled beef and balsamic noodz bowls."
-  ],
+  items: ["Paprika stir-fry, Korean pulled beef and balsamic noodz bowls."],
   bgColor: "#000000",
   textColor: "#ffffff",
 
@@ -131,29 +200,43 @@ export const BRANDS: Brand[] = [
       id: "bowls",
       label: "Noodz Bowls",
       columns: ["Price"],
+      note: "All dishes are K180.",
       items: [
         {
           name: "Paprika Stir-Fry",
           description:
-            "Bok choy, seasonal veg, and a paprika kick. Choose your partner: chicken | beef | tofu. Get tossed.",
-          prices: [""], // fill in e.g. "K 150"
+            "Bok choy, seasonal veg and a paprika kick. Choose your partner: chicken | beef | tofu. Get tossed.",
+          prices: ["K 180"],
+        },
+        {
+          name: "Peanut Stir-Fry",
+          description:
+            "Creamy peanut & coconut sauce with seasonal veg. Choose your partner: chicken | beef | tofu. Get tossed.",
+          prices: ["K 180"],
+        },
+        {
+          name: "Thai Curry Stir Fry",
+          description:
+            "Thai-inspired flavours with green beans, carrots, cabbage and mushrooms. Choose your partner: chicken | beef | tofu.",
+          prices: ["K 180"],
         },
         {
           name: "Korean Pulled Beef",
           description:
             "Slow-cooked, saucy, and falls apart at the touch. Go ahead... pull it.",
-          prices: [""], // fill in price
+          prices: ["K 180"],
         },
         {
           name: "Balsamic Noodz",
           description:
             "Tangy balsamic, seasonal veg, glossy noodles. Choose your partner: chicken | beef | tofu. Make it exciting.",
-          prices: [""], // fill in price
+          prices: ["K 180"],
         },
       ],
     },
   ],
 },
+
 
 {
   id: "loko",
@@ -162,9 +245,7 @@ export const BRANDS: Brand[] = [
   category: "food",
   blurb: "“A little loco, a lotta flavour”",
   tags: ["Mexican", "Spicy", "Street Food"],
-  items: [
-    "Street-style corn, loaded nachos and loud, messy tacos."
-  ],
+  items: ["Street-style corn, loaded nachos and loud, messy tacos."],
   bgColor: "#b42025",
   textColor: "#ffffff",
 
@@ -175,7 +256,7 @@ export const BRANDS: Brand[] = [
       columns: ["Price"],
       items: [
         {
-          name: "Elotes",
+          name: "Street Corn (Elotes)",
           description:
             "Small bite, big attitude. Grilled sweet corn with house sauce, feta and tajin.",
           prices: ["K 90"],
@@ -184,7 +265,7 @@ export const BRANDS: Brand[] = [
           name: "Nachos",
           description:
             "Share if you dare. Vegetarian | Chicken | Beef. All served with pickled onions, avocado cream & sour cream.",
-          prices: ["K 150"],
+          prices: ["K 200"],
         },
       ],
     },
@@ -194,24 +275,24 @@ export const BRANDS: Brand[] = [
       columns: ["Price"],
       note: "Loud. Messy. Perfect.",
       items: [
-        { name: "Chicken Taco", prices: ["K 150"] },
-        { name: "Pork Taco", prices: ["K 150"] },
-        { name: "Beef Steak Taco", prices: ["K 150"] },
-        { name: "Crayfish Taco", prices: ["K 150"] },
-        { name: "Roasted Cauliflower Taco", prices: ["K 150"] },
+        { name: "Chicken Taco", prices: ["K 180"] },
+        { name: "Pork Taco", prices: ["K 180"] },
+        { name: "Beef Steak Taco", prices: ["K 180"] },
+        { name: "Crayfish Taco", prices: ["K 180"] },
+        { name: "Roasted Cauliflower Taco", prices: ["K 180"] },
       ],
     },
   ],
 },
 
-  {
+
+ {
   id: "dumpling-hutt",
   name: "Dumpling Hutt",
   logo: "/brands/dumpling-hutt.svg",
   category: "food",
   blurb: "“Happiness, hand-folded.”",
   tags: ["Dumplings", "Asian", "Noodles"],
-  // You can keep these as general highlights if you like
   items: ["Hand-folded dumplings and wontons, 6 pieces per serving."],
   bgColor: "#e6c61f",
   textColor: "#000000",
@@ -221,13 +302,11 @@ export const BRANDS: Brand[] = [
       id: "dumplings",
       label: "Dumplings",
       columns: ["Price"],
-      note: "All dumplings are 6 for K150.",
+      note: "Dumplings – 6 for K150.",
       items: [
-        { name: "Beef & Kimchi",                          prices: ["K 150"] },
-        { name: "Pork & Butternut",                       prices: ["K 150"] },
-        { name: "Chicken & Pickled Cabbage",              prices: ["K 150"] },
-        {name: "__title__", label: "Optional Items", prices: [] },
-          
+        { name: "Beef & Kimchi", prices: ["K 150"] },
+        { name: "Pork & Butternut", prices: ["K 150"] },
+        { name: "Chicken & Pickled Cabbage", prices: ["K 150"] },
         {
           name: "Tofu & Seasonal Veg with Rice Noodles",
           prices: ["K 150"],
@@ -241,6 +320,7 @@ export const BRANDS: Brand[] = [
   ],
 },
 
+
 {
   id: "fryer-tucks",
   name: "Fryer Tucks",
@@ -248,7 +328,6 @@ export const BRANDS: Brand[] = [
   category: "food",
   blurb: "“In Fryer We Trust”",
   tags: ["Loaded Fries", "Loaded Dogs", "Comfort Food"],
-  // required by your Brand type: quick highlight lines
   items: ["Loaded fries and hot dogs stacked with toppings."],
   bgColor: "#9b52a0",
   textColor: "#ffffff",
@@ -264,18 +343,19 @@ export const BRANDS: Brand[] = [
           name: "Classic",
           description:
             "Topped with cheese sauce. Add bacon and/or jalapeños (extra charge).",
-          prices: [""], // fill with "K 150" when ready
+          prices: ["K 150"],
         },
         {
           name: "Pulled BBQ Beef",
-          description: "With pulled beef and BBQ sauce.",
-          prices: [""],
+          description:
+            "With pulled beef and BBQ sauce, coleslaw and crispy onion.",
+          prices: ["K 150"],
         },
         {
           name: "Mediterranean Chicken",
           description:
-            "Shredded chicken, tomato & cucumber salad, tzatziki & feta crumble.",
-          prices: [""],
+            "With chicken, tomato & cucumber salad, olives, tzatziki & feta crumble.",
+          prices: ["K 150"],
         },
       ],
     },
@@ -283,34 +363,37 @@ export const BRANDS: Brand[] = [
     {
       id: "loaded-dogs",
       label: "Loaded Dogs",
-      note: "All loaded dogs are K150.",
+      note: "All loaded dogs are K150. Choose from chicken, pork or beef sausage.",
       columns: ["Price"],
       items: [
         {
           name: "Korean Slaw Dog",
-          description: "",
-          prices: [""],
+          description:
+            "With Korean slaw, spiced ketchup & zingy mustard.",
+          prices: ["K 150"],
         },
         {
           name: "Jalapeño Popper Dog",
-          description: "Cream cheese, pickled jalapeños & bacon.",
-          prices: [""],
+          description: "With cream cheese, pickled jalapeños & bacon.",
+          prices: ["K 150"],
         },
         {
           name: "New York Style Hot Dog",
           description:
-            "Pickled cabbage, tomato & onion relish, crispy onions.",
-          prices: [""],
+            "With pickled cabbage, tomato & onion relish, crispy onions and mustard.",
+          prices: ["K 150"],
         },
         {
           name: "Teriyaki Dog",
-          description: "Fresh vegetable mix and pickled ginger.",
-          prices: [""],
+          description:
+            "With fresh vegetable mix, teriyaki sauce and pickled ginger.",
+          prices: ["K 150"],
         },
         {
           name: "Boerewors Roll",
-          description: "Classic tomato & onion gravy.",
-          prices: [""],
+          description:
+            "With classic tomato & onion relish and crispy onions.",
+          prices: ["K 150"],
         },
       ],
     },
@@ -319,18 +402,17 @@ export const BRANDS: Brand[] = [
 
   // ---------------- DRINKS ----------------
 
-  {
+{
   id: "copper-hog",
   name: "Copper Hog",
   logo: "/brands/copper-hog.svg",
   category: "drinks",
   blurb: "“Tap into something stronger”",
   tags: ["Beer", "Ciders", "Cocktails", "Spirits", "Shooters"],
-  // You can keep or adjust these highlight blurbs:
   items: [
     "Ice-cold beers and ciders by the bucket or single.",
     "Copperhog original cocktails and gin spritzes.",
-    "A full back bar of whiskies, rums and shooters."
+    "A full back bar of whiskies, rums and shooters.",
   ],
   bgColor: "#1f4520",
   textColor: "#ffffff",
@@ -342,16 +424,16 @@ export const BRANDS: Brand[] = [
       label: "Beers",
       columns: ["Single", "Bucket"],
       items: [
-        { name: "Castle Lite",        prices: ["K 60", "K 300"] },
-        { name: "Corona",             prices: ["K 80", "K 400"] },
-        { name: "Stella",             prices: ["K 70", "K 350"] },
-        { name: "Heineken",           prices: ["K 70", "K 350"] },
-        { name: "Heineken Silver",    prices: ["K 70", "K 350"] },
-        { name: "Windhoek Draught",   prices: ["K 70", "K 350"] },
-        { name: "Guinness",           prices: ["K 90", ""] },
-        { name: "Rebel Pilsner",      prices: ["K 75", ""] },
-        { name: "Rebel Dark Lager",   prices: ["K 75", ""] }
-      ]
+        { name: "Castle Lite",      prices: ["K 60", "K 300"] },
+        { name: "Corona",           prices: ["K 80", "K 400"] },
+        { name: "Stella",           prices: ["K 70", "K 350"] },
+        { name: "Heineken",         prices: ["K 70", "K 350"] },
+        { name: "Heineken Silver",  prices: ["K 70", "K 350"] },
+        { name: "Windhoek Lager",   prices: ["K 70", "K 350"] },
+        { name: "Guinness",         prices: ["K 100", "K 350"] },
+        { name: "Rebel Pilsner",    prices: ["K 80", ""] },
+        { name: "Rebel Dark Lager", prices: ["K 80", ""] },
+      ],
     },
 
     // CIDERS
@@ -362,37 +444,41 @@ export const BRANDS: Brand[] = [
       items: [
         { name: "Brutal Fruit",  prices: ["K 60", "K 300"] },
         { name: "Flying Fish",   prices: ["K 60", "K 300"] },
-        { name: "Savanna Dry",   prices: ["K 70", "K 350"] }
-      ]
+        { name: "Savanna Dry",   prices: ["K 70", "K 350"] },
+        { name: "Belgravia",     prices: ["K 80", "K 400"] },
+      ],
     },
 
-    // COCKTAILS – COPPERHOG ORIGINALS
+    // COCKTAILS – ORIGINALS & FRIENDS
     {
       id: "originals",
-      label: "Copperhog Originals",
+      label: "Copperhog Originals & Cocktails",
       columns: ["Price"],
       items: [
         { name: "Summer Sangria",          prices: ["K 180"] },
         { name: "The Tipsy Hog Margarita", prices: ["K 180"] },
-        { name: "Bloody Mary",            prices: ["K 180"] },
-        { name: "Irish Gold",             prices: ["K 180"] },
-        { name: "Rum Runner",             prices: ["K 180"] },
-        { name: "Ice Tropez",             prices: ["K 250"] }
-      ]
+        { name: "Bloody Mary",             prices: ["K 180"] },
+        { name: "Irish Gold",              prices: ["K 180"] },
+        { name: "Rum Runner",              prices: ["K 180"] },
+        { name: "Aperol Spritz",           prices: ["K 180"] },
+        { name: "Mocktails",               prices: ["K 130"] },
+        { name: "Ice Tropez",              prices: ["K 250"] },
+      ],
     },
 
+    // GIN SPRITZ
     {
-  id: "gin-spritz",
-  label: "Gin Spritz",
-  columns: ["Price"],
-  items: [
-    { name: "Cucumber & Mint", prices: ["K150"] },
-    { name: "Ginger & Peach", prices: ["K150"] },
-    { name: "Strawberry, Orange & Basil", prices: ["K150"] },
-    { name: "Guava & Grapefruit", prices: ["K150"] }
-  ]
-},
-
+      id: "gin-spritz",
+      label: "Gin Spritz",
+      columns: ["Price"],
+      note: "All gin spritz flavours are K180.",
+      items: [
+        { name: "Cucumber & Mint",             prices: ["K 180"] },
+        { name: "Ginger & Peach",              prices: ["K 180"] },
+        { name: "Strawberry, Orange & Basil",  prices: ["K 180"] },
+        { name: "Guava & Grapefruit",          prices: ["K 180"] },
+      ],
+    },
 
     // SPIRITS & SHOTS
     {
@@ -400,28 +486,27 @@ export const BRANDS: Brand[] = [
       label: "Spirits & Shots",
       columns: ["Shot", "Bottle"],
       items: [
-        { name: "Jameson Original",           prices: ["50", "1200"] },
-        { name: "Jameson Black Barrel",       prices: ["70", "1900"] },
-        { name: "Johnnie Walker Black",       prices: ["65", "1500"] },
-        { name: "Monkey Shoulder",            prices: ["80", "1800"] },
-        { name: "The Glenlivet Founders",     prices: ["90", "2500"] },
-        { name: "The Glenlivet 15 YO",        prices: ["150", "3600"] },
-        { name: "Jack Daniels",               prices: ["60", "1500"] },
-        { name: "Jack Daniels Rye",           prices: ["60", "1500"] },
-        { name: "Balvenie 12",                prices: ["95", "2500"] },
-        { name: "Glenmorangie 12",            prices: ["90", "2500"] },
-        { name: "Absolut Original",           prices: ["50", "1200"] },
-        { name: "Triple Three",               prices: ["60", "900"] },
-        { name: "Inverroche",                 prices: ["90", "1900"] },
-        { name: "1964",                       prices: ["70", "1400"] },
-
-        { name: "KWV",                        prices: ["50", "950"] },
-        { name: "Captain Morgan Spiced Gold", prices: ["50", "950"] },
-        { name: "Captain Morgan Dark Rum",    prices: ["50", "950"] },
-        { name: "Hennessy VS",                prices: ["90", "2450"] },
-        { name: "Hennessy VSOP",              prices: ["120", "3500"] },
-        { name: "Southern Comfort",           prices: ["50", "1200"] }
-      ]
+        { name: "Jameson Original",           prices: ["K 50", "K 1200"] },
+        { name: "Jameson Black Barrel",       prices: ["K 70", "K 1900"] },
+        { name: "Johnnie Walker Black",       prices: ["K 65", "K 1500"] },
+        { name: "Monkey Shoulder",            prices: ["K 80", "K 1800"] },
+        { name: "The Glenlivet Founders",     prices: ["K 90", "K 2500"] },
+        { name: "The Glenlivet 15 YO",        prices: ["K 150", "K 3600"] },
+        { name: "Jack Daniels",               prices: ["K 60", "K 1500"] },
+        { name: "Jack Daniels Rye",           prices: ["K 60", "K 1500"] },
+        { name: "Balvenie 12",                prices: ["K 95", "K 2500"] },
+        { name: "Glenmorangie 12",            prices: ["K 90", "K 2500"] },
+        { name: "Absolut Original",           prices: ["K 50", "K 1200"] },
+        { name: "Triple Three",               prices: ["K 60", "K 900"] },
+        { name: "Inverroche",                 prices: ["K 90", "K 1900"] },
+        { name: "1964",                       prices: ["K 70", "K 1400"] },
+        { name: "KWV",                        prices: ["K 50", "K 950"] },
+        { name: "Captain Morgan Spiced Gold", prices: ["K 50", "K 950"] },
+        { name: "Captain Morgan Dark Rum",    prices: ["K 50", "K 950"] },
+        { name: "Hennessy VS",                prices: ["K 90", "K 2450"] },
+        { name: "Hennessy VSOP",              prices: ["K 120", "K 3500"] },
+        { name: "Southern Comfort",           prices: ["K 50", "K 1200"] },
+      ],
     },
 
     // SHOOTERS
@@ -430,14 +515,14 @@ export const BRANDS: Brand[] = [
       label: "Shooters",
       columns: ["Price"],
       items: [
-        // Please double-check the spelling of “Po10cy” on your side; I’ve kept it as it appears.
         { name: "Po10cy",              prices: ["K 50"] },
         { name: "Altos Blanco",        prices: ["K 75"] },
         { name: "Altos Reposado",      prices: ["K 75"] },
         { name: "1800 Coconut",        prices: ["K 80"] },
         { name: "Jagermeister",        prices: ["K 60"] },
-        { name: "Jagermeister Orange", prices: ["K 60"] }
-      ]
+        { name: "Jagermeister Orange", prices: ["K 60"] },
+        { name: "Cactus Jack Oyster",  prices: ["K 75"] },
+      ],
     },
 
     // MIXERS
@@ -445,25 +530,7 @@ export const BRANDS: Brand[] = [
       id: "mixers",
       label: "Mixers & Soft Drinks",
       columns: ["Price"],
-      items: [
-        { name: "All mixers and softies", prices: ["K 40"] }
-      ]
-    }
-  ]
+      items: [{ name: "All mixers and softies", prices: ["K 40"] }],
+    },
+  ],
 },
-
-
-  {
-    id: "pour-house",
-    name: "Pour House",
-    logo: "/brands/pour-house.svg",
-    category: "drinks",
-    blurb: "“Your midweek merit moment”",
-    tags: ["Wine", "Cocktails", "After-Work"],
-    items: [
-      "Wine by the glass or bottle, classic cocktails and easy sippers.",
-    ],
-    bgColor: "#86a988",
-    textColor: "#ffffff",
-  },
-];
