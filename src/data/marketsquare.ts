@@ -430,7 +430,7 @@ export const BRANDS: Brand[] = [
           { name: "Heineken",         prices: ["K 70", "K 350"] },
           { name: "Heineken Silver",  prices: ["K 70", "K 350"] },
           { name: "Windhoek Lager",   prices: ["K 70", "K 350"] },
-          { name: "Guinness",         prices: ["K 100", "K 350"] },
+          { name: "Guinness",         prices: ["K 100", ""] },
           { name: "Rebel Pilsner",    prices: ["K 80", ""] },
           { name: "Rebel Dark Lager", prices: ["K 80", ""] },
         ],
@@ -540,7 +540,7 @@ export const BRANDS: Brand[] = [
     name: "Pour House",
     logo: "/brands/pour-house.svg",
     category: "drinks",
-    blurb: "“Your midweek merit moment”",
+    blurb: "“Coming Soon”",
     tags: ["Wine", "Cocktails", "After-Work"],
     items: [
       "Wine by the glass or bottle, classic cocktails and easy sippers.",
