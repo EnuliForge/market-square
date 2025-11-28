@@ -400,137 +400,152 @@ export const BRANDS: Brand[] = [
   ],
 },
 
-  // ---------------- DRINKS ----------------
+   // ---------------- DRINKS ----------------
 
-{
-  id: "copper-hog",
-  name: "Copper Hog",
-  logo: "/brands/copper-hog.svg",
-  category: "drinks",
-  blurb: "“Tap into something stronger”",
-  tags: ["Beer", "Ciders", "Cocktails", "Spirits", "Shooters"],
-  items: [
-    "Ice-cold beers and ciders by the bucket or single.",
-    "Copperhog original cocktails and gin spritzes.",
-    "A full back bar of whiskies, rums and shooters.",
-  ],
-  bgColor: "#1f4520",
-  textColor: "#ffffff",
+  {
+    id: "copper-hog",
+    name: "Copper Hog",
+    logo: "/brands/copper-hog.svg",
+    category: "drinks",
+    blurb: "“Tap into something stronger”",
+    tags: ["Beer", "Ciders", "Cocktails", "Spirits", "Shooters"],
+    items: [
+      "Ice-cold beers and ciders by the bucket or single.",
+      "Copperhog original cocktails and gin spritzes.",
+      "A full back bar of whiskies, rums and shooters.",
+    ],
+    bgColor: "#1f4520",
+    textColor: "#ffffff",
 
-  menu: [
-    // BEERS
-    {
-      id: "beers",
-      label: "Beers",
-      columns: ["Single", "Bucket"],
-      items: [
-        { name: "Castle Lite",      prices: ["K 60", "K 300"] },
-        { name: "Corona",           prices: ["K 80", "K 400"] },
-        { name: "Stella",           prices: ["K 70", "K 350"] },
-        { name: "Heineken",         prices: ["K 70", "K 350"] },
-        { name: "Heineken Silver",  prices: ["K 70", "K 350"] },
-        { name: "Windhoek Lager",   prices: ["K 70", "K 350"] },
-        { name: "Guinness",         prices: ["K 100", "K 350"] },
-        { name: "Rebel Pilsner",    prices: ["K 80", ""] },
-        { name: "Rebel Dark Lager", prices: ["K 80", ""] },
-      ],
-    },
+    menu: [
+      // BEERS
+      {
+        id: "beers",
+        label: "Beers",
+        columns: ["Single", "Bucket"],
+        items: [
+          { name: "Castle Lite",      prices: ["K 60", "K 300"] },
+          { name: "Corona",           prices: ["K 80", "K 400"] },
+          { name: "Stella",           prices: ["K 70", "K 350"] },
+          { name: "Heineken",         prices: ["K 70", "K 350"] },
+          { name: "Heineken Silver",  prices: ["K 70", "K 350"] },
+          { name: "Windhoek Lager",   prices: ["K 70", "K 350"] },
+          { name: "Guinness",         prices: ["K 100", "K 350"] },
+          { name: "Rebel Pilsner",    prices: ["K 80", ""] },
+          { name: "Rebel Dark Lager", prices: ["K 80", ""] },
+        ],
+      },
 
-    // CIDERS
-    {
-      id: "ciders",
-      label: "Ciders",
-      columns: ["Single", "Bucket"],
-      items: [
-        { name: "Brutal Fruit",  prices: ["K 60", "K 300"] },
-        { name: "Flying Fish",   prices: ["K 60", "K 300"] },
-        { name: "Savanna Dry",   prices: ["K 70", "K 350"] },
-        { name: "Belgravia",     prices: ["K 80", "K 400"] },
-      ],
-    },
+      // CIDERS
+      {
+        id: "ciders",
+        label: "Ciders",
+        columns: ["Single", "Bucket"],
+        items: [
+          { name: "Brutal Fruit",  prices: ["K 60", "K 300"] },
+          { name: "Flying Fish",   prices: ["K 60", "K 300"] },
+          { name: "Savanna Dry",   prices: ["K 70", "K 350"] },
+          { name: "Belgravia",     prices: ["K 80", "K 400"] },
+        ],
+      },
 
-    // COCKTAILS – ORIGINALS & FRIENDS
-    {
-      id: "originals",
-      label: "Copperhog Originals & Cocktails",
-      columns: ["Price"],
-      items: [
-        { name: "Summer Sangria",          prices: ["K 180"] },
-        { name: "The Tipsy Hog Margarita", prices: ["K 180"] },
-        { name: "Bloody Mary",             prices: ["K 180"] },
-        { name: "Irish Gold",              prices: ["K 180"] },
-        { name: "Rum Runner",              prices: ["K 180"] },
-        { name: "Aperol Spritz",           prices: ["K 180"] },
-        { name: "Mocktails",               prices: ["K 130"] },
-        { name: "Ice Tropez",              prices: ["K 250"] },
-      ],
-    },
+      // COCKTAILS – ORIGINALS & FRIENDS
+      {
+        id: "originals",
+        label: "Copperhog Originals & Cocktails",
+        columns: ["Price"],
+        items: [
+          { name: "Summer Sangria",          prices: ["K 180"] },
+          { name: "The Tipsy Hog Margarita", prices: ["K 180"] },
+          { name: "Bloody Mary",             prices: ["K 180"] },
+          { name: "Irish Gold",              prices: ["K 180"] },
+          { name: "Rum Runner",              prices: ["K 180"] },
+          { name: "Aperol Spritz",           prices: ["K 180"] },
+          { name: "Mocktails",               prices: ["K 130"] },
+          { name: "Ice Tropez",              prices: ["K 250"] },
+        ],
+      },
 
-    // GIN SPRITZ
-    {
-      id: "gin-spritz",
-      label: "Gin Spritz",
-      columns: ["Price"],
-      note: "All gin spritz flavours are K180.",
-      items: [
-        { name: "Cucumber & Mint",             prices: ["K 180"] },
-        { name: "Ginger & Peach",              prices: ["K 180"] },
-        { name: "Strawberry, Orange & Basil",  prices: ["K 180"] },
-        { name: "Guava & Grapefruit",          prices: ["K 180"] },
-      ],
-    },
+      // GIN SPRITZ
+      {
+        id: "gin-spritz",
+        label: "Gin Spritz",
+        columns: ["Price"],
+        note: "All gin spritz flavours are K180.",
+        items: [
+          { name: "Cucumber & Mint",             prices: ["K 180"] },
+          { name: "Ginger & Peach",              prices: ["K 180"] },
+          { name: "Strawberry, Orange & Basil",  prices: ["K 180"] },
+          { name: "Guava & Grapefruit",          prices: ["K 180"] },
+        ],
+      },
 
-    // SPIRITS & SHOTS
-    {
-      id: "spirits",
-      label: "Spirits & Shots",
-      columns: ["Shot", "Bottle"],
-      items: [
-        { name: "Jameson Original",           prices: ["K 50", "K 1200"] },
-        { name: "Jameson Black Barrel",       prices: ["K 70", "K 1900"] },
-        { name: "Johnnie Walker Black",       prices: ["K 65", "K 1500"] },
-        { name: "Monkey Shoulder",            prices: ["K 80", "K 1800"] },
-        { name: "The Glenlivet Founders",     prices: ["K 90", "K 2500"] },
-        { name: "The Glenlivet 15 YO",        prices: ["K 150", "K 3600"] },
-        { name: "Jack Daniels",               prices: ["K 60", "K 1500"] },
-        { name: "Jack Daniels Rye",           prices: ["K 60", "K 1500"] },
-        { name: "Balvenie 12",                prices: ["K 95", "K 2500"] },
-        { name: "Glenmorangie 12",            prices: ["K 90", "K 2500"] },
-        { name: "Absolut Original",           prices: ["K 50", "K 1200"] },
-        { name: "Triple Three",               prices: ["K 60", "K 900"] },
-        { name: "Inverroche",                 prices: ["K 90", "K 1900"] },
-        { name: "1964",                       prices: ["K 70", "K 1400"] },
-        { name: "KWV",                        prices: ["K 50", "K 950"] },
-        { name: "Captain Morgan Spiced Gold", prices: ["K 50", "K 950"] },
-        { name: "Captain Morgan Dark Rum",    prices: ["K 50", "K 950"] },
-        { name: "Hennessy VS",                prices: ["K 90", "K 2450"] },
-        { name: "Hennessy VSOP",              prices: ["K 120", "K 3500"] },
-        { name: "Southern Comfort",           prices: ["K 50", "K 1200"] },
-      ],
-    },
+      // SPIRITS & SHOTS
+      {
+        id: "spirits",
+        label: "Spirits & Shots",
+        columns: ["Shot", "Bottle"],
+        items: [
+          { name: "Jameson Original",           prices: ["K 50", "K 1200"] },
+          { name: "Jameson Black Barrel",       prices: ["K 70", "K 1900"] },
+          { name: "Johnnie Walker Black",       prices: ["K 65", "K 1500"] },
+          { name: "Monkey Shoulder",            prices: ["K 80", "K 1800"] },
+          { name: "The Glenlivet Founders",     prices: ["K 90", "K 2500"] },
+          { name: "The Glenlivet 15 YO",        prices: ["K 150", "K 3600"] },
+          { name: "Jack Daniels",               prices: ["K 60", "K 1500"] },
+          { name: "Jack Daniels Rye",           prices: ["K 60", "K 1500"] },
+          { name: "Balvenie 12",                prices: ["K 95", "K 2500"] },
+          { name: "Glenmorangie 12",            prices: ["K 90", "K 2500"] },
+          { name: "Absolut Original",           prices: ["K 50", "K 1200"] },
+          { name: "Triple Three",               prices: ["K 60", "K 900"] },
+          { name: "Inverroche",                 prices: ["K 90", "K 1900"] },
+          { name: "1964",                       prices: ["K 70", "K 1400"] },
+          { name: "KWV",                        prices: ["K 50", "K 950"] },
+          { name: "Captain Morgan Spiced Gold", prices: ["K 50", "K 950"] },
+          { name: "Captain Morgan Dark Rum",    prices: ["K 50", "K 950"] },
+          { name: "Hennessy VS",                prices: ["K 90", "K 2450"] },
+          { name: "Hennessy VSOP",              prices: ["K 120", "K 3500"] },
+          { name: "Southern Comfort",           prices: ["K 50", "K 1200"] },
+        ],
+      },
 
-    // SHOOTERS
-    {
-      id: "shooters",
-      label: "Shooters",
-      columns: ["Price"],
-      items: [
-        { name: "Po10cy",              prices: ["K 50"] },
-        { name: "Altos Blanco",        prices: ["K 75"] },
-        { name: "Altos Reposado",      prices: ["K 75"] },
-        { name: "1800 Coconut",        prices: ["K 80"] },
-        { name: "Jagermeister",        prices: ["K 60"] },
-        { name: "Jagermeister Orange", prices: ["K 60"] },
-        { name: "Cactus Jack Oyster",  prices: ["K 75"] },
-      ],
-    },
+      // SHOOTERS
+      {
+        id: "shooters",
+        label: "Shooters",
+        columns: ["Price"],
+        items: [
+          { name: "Po10cy",              prices: ["K 50"] },
+          { name: "Altos Blanco",        prices: ["K 75"] },
+          { name: "Altos Reposado",      prices: ["K 75"] },
+          { name: "1800 Coconut",        prices: ["K 80"] },
+          { name: "Jagermeister",        prices: ["K 60"] },
+          { name: "Jagermeister Orange", prices: ["K 60"] },
+          { name: "Cactus Jack Oyster",  prices: ["K 75"] },
+        ],
+      },
 
-    // MIXERS
-    {
-      id: "mixers",
-      label: "Mixers & Soft Drinks",
-      columns: ["Price"],
-      items: [{ name: "All mixers and softies", prices: ["K 40"] }],
-    },
-  ],
-},
+      // MIXERS
+      {
+        id: "mixers",
+        label: "Mixers & Soft Drinks",
+        columns: ["Price"],
+        items: [{ name: "All mixers and softies", prices: ["K 40"] }],
+      },
+    ],
+  },
+
+  {
+    id: "pour-house",
+    name: "Pour House",
+    logo: "/brands/pour-house.svg",
+    category: "drinks",
+    blurb: "“Your midweek merit moment”",
+    tags: ["Wine", "Cocktails", "After-Work"],
+    items: [
+      "Wine by the glass or bottle, classic cocktails and easy sippers.",
+    ],
+    bgColor: "#86a988",
+    textColor: "#ffffff",
+  },
+];
